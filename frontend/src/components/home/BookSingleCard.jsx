@@ -3,7 +3,7 @@ import { PiBookOpenTextLight } from "react-icons/pi";
 import { BiUserCircle, BiShow } from "react-icons/bi";
 import { useState } from "react";
 
-import BookModal from "./BookMOdal";
+import BookModal from "./BookModal";
 
 export const BookSingleCard = ({ book }) => {
   const [showModal, setShowModal] = useState(false);
