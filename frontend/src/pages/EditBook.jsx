@@ -4,6 +4,7 @@ import Spinner from "../components/Spinner";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
+import Api from "../api/Api";
 
 const EditBook = () => {
   const [title, setTitle] = useState("");
@@ -16,8 +17,8 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`http://localhost:5555/books/${id}`)
+    Api()
+      .get(`/books/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublichYear(res.data.publishYear);

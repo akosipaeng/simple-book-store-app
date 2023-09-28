@@ -4,6 +4,7 @@ import Spinner from "../components/Spinner";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
+import Api from "../api/Api";
 
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +14,7 @@ const DeleteBook = () => {
 
   const handleDeleteBook = () => {
     setLoading(true);
-    axios
+    Api()
       .delete(`http://localhost:5555/books/${id}`)
       .then(() => {
         setLoading(false);

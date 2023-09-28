@@ -6,6 +6,7 @@ import { MdOutlineAddBox } from "react-icons/md";
 import Spinner from "../components/Spinner";
 import BooksTable from "../components/home/BooksTable";
 import BooksCard from "../components/home/BooksCard";
+import Api from "../api/Api";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -14,8 +15,8 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get("http://localhost:5555/books")
+    Api()
+      .get("/books")
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
